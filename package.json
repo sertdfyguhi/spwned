@@ -1,14 +1,14 @@
 {
   "name": "spwned",
   "version": "1.0.0",
-  "description": "Run spwn code online!",
+  "description": "An online SPWN executor & builder.",
   "main": "index.js",
   "devDependencies": {},
   "scripts": {
     "test": "node .",
     "start": "npm install && node ."
   },
-  "author": "sertdfyguhi",
+  "maintainers": ["sertdfyguhi", "Bestgamer08"],
   "license": "MIT",
   "dependencies": {
     "express": "^4.17.1"
