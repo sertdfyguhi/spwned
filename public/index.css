@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Cousine&display=swap');
+
+body {
+  font-family: Cousine;
+}
+
+.code {
+  width: 100%;
+  box-sizing: border-box;
+  resize: none;
+}
+
+.output {
+  font-size: 13px;
+  background: rgb(229, 229, 229);
+  padding: 5px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  min-height: 200px;
+  border-radius: 3px;
+}

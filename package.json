@@ -1,0 +1,16 @@
+{
+  "name": "spwn.online",
+  "version": "1.0.0",
+  "description": "Run spwn code online!",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "node .",
+    "start": "npm install && node ."
+  },
+  "author": "sertdfyguhi",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
