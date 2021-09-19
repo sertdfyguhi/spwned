@@ -21,10 +21,10 @@ body {
 }
 
 .button {
-		position: absolute; top: 87%; left: 43%;
+	position: absolute; top: 87%; left: 43%;
   display: inline-block;
   border-radius: 4px;
-background-color: #04AA6D; 
+  background-color: #04AA6D; 
   border: none;
   color: #FFFFFF;
   text-align: center;
