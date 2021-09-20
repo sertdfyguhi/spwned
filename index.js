@@ -26,8 +26,13 @@ app.post('/api/run', (req, res) => {
 
   exec(
     `cd spwn/${ver} && ./${ver} build ../../files/${fn}.spwn --no-gd -l`,
+    { timeout: 10000 },
     function(err, stdout, stderr) {
-      res.status(200).send({ output: (stdout+stderr).replace(ANSI_CODE_REGEX, '') })
+      if (err.killed) {
+        res.status(200).send({ output: 'timeout exceeded' })
+      } else {
+        res.status(200).send({ output: (stdout+stderr).replace(ANSI_CODE_REGEX, '') })
+      }
       fs.unlink(`files/${fn}.spwn`, function(err) {
         if (err) { console.error(err) }
       })
