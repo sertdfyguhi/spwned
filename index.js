@@ -12,7 +12,8 @@ app.post('/api/run', (req, res) => {
   const fn = Math.random().toString(36).slice(2)
 
   fs.writeFileSync(`spwn/${fn}.spwn`, code)
-  exec(`spwn build spwn/${fn}.spwn -l`, function(err, stdout, stderr) {
+if (req.body.flags){
+	  exec(`spwn build spwn/${fn}.spwn -l ` + req.body.flags, function(err, stdout, stderr) {
     res.send({ output: (stdout+stderr).replace(ANSI_CODE_REGEX, '') })
     fs.unlink(`spwn/${fn}.spwn`, function(err) {
       if (err) {
@@ -20,6 +21,17 @@ app.post('/api/run', (req, res) => {
       }
     })
   })
+}
+else {
+	  exec(`spwn build spwn/${fn}.spwn -l`, function(err, stdout, stderr) {
+    res.send({ output: (stdout+stderr).replace(ANSI_CODE_REGEX, '') })
+    fs.unlink(`spwn/${fn}.spwn`, function(err) {
+      if (err) {
+        console.error(err)
+      }
+    })
+  })
+}
 })
 
 app.listen(5000)
