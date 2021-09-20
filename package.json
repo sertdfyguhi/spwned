@@ -6,7 +6,7 @@
   "devDependencies": {},
   "scripts": {
     "test": "node .",
-    "start": "npm install && node ."
+    "start": "npm install; mkdir files; node ."
   },
   "maintainers": ["sertdfyguhi", "Bestgamer08"],
   "license": "MIT",

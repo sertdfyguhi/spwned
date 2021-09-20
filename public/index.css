@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Cousine&display=swap');
 
 body {
-  font-family: Cousine;
+  text-align: center;
 }
 
 .code {
@@ -12,21 +12,24 @@ body {
 
 .output {
   font-size: 13px;
+  font-family: Cousine;
   background: rgb(229, 229, 229);
   padding: 5px;
   margin-top: 8px;
   margin-bottom: 8px;
   min-height: 200px;
   border-radius: 3px;
+  text-align: left;
 }
 
 .button {
   display: inline-block;
   border-radius: 4px;
-background-color: #04AA6D; 
+  background-color: #04AA6D; 
   border: none;
   color: #FFFFFF;
   text-align: center;
+  font-family: Cousine;
   font-size: 28px;
   padding: 20px;
   width: 200px;
