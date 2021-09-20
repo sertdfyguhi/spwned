@@ -1,5 +1,5 @@
 # spwned
-An online SPWN executor & builder.
+An online SPWN executor & builder. original idea by @Unzor
 
 # running it
 1. clone this repo using `git clone https://github.com/sertdfyguhi/spwned`
