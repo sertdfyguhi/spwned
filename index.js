@@ -2,7 +2,7 @@ const fs = require('fs')
 const { exec } = require('child_process')
 const express = require('express')
 const app = express()
-const PORT = 5000
+const PORT = 3000
 const ANSI_CODE_REGEX = /[\u001b\u009b][[()#;?]*(?:[0-9]{1,4}(?:;[0-9]{0,4})*)?[0-9A-ORZcf-nqry=><]/g
 
 app.use(express.static('public'))
@@ -28,7 +28,7 @@ app.post('/api/run', (req, res) => {
     `cd spwn/${ver} && ./${ver} build ../../files/${fn}.spwn --no-gd -l`,
     { timeout: 10000 },
     function(err, stdout, stderr) {
-      if (err.killed) {
+      if (err && err.killed) {
         res.status(200).send({ output: 'timeout exceeded' })
       } else {
         res.status(200).send({ output: (stdout+stderr).replace(ANSI_CODE_REGEX, '') })
