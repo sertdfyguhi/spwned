@@ -12,6 +12,8 @@ if not os.path.exists('spwn'): os.mkdir('spwn')
 os.chdir('spwn')
 
 for release in req.json():
+    if os.path.exists(f'spwn/{release["tag_name"]}'): continue
+
     with open(f'{release["tag_name"]}.tar.gz', 'wb') as f:
         tarball = requests.get(release['tarball_url']).content
         f.write(tarball)
